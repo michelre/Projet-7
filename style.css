@@ -1,0 +1,18 @@
+body {
+    background-image: url("image/forestcc.jpg");
+    opacity: 10%;
+    
+}
+h1 {
+    text-align: center;
+    color: ivory;
+}
+footer {
+    color: ivory;
+    margin-top: 500px;
+}
+.empty {
+    background-color: white;
+    margin-top: 20px;
+    margin-left: 100px;
+}
