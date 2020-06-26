@@ -18,8 +18,23 @@ class BoardDrawing {
     }
 
     
-    drawRect(xStart,yStart,size,color){
+    drawRect(xStart,yStart,size,color,weapon){
         this.canvaContext.fillStyle = color;
         this.canvaContext.fillRect(xStart,yStart,size,size);
+        if (weapon){
+        console.log(weapon);
+        var drawX = 800/this.length * xStart + (800/this.length - 40) / 2;
+        var drawY = 800/this.length * yStart + (800/this.length - 40) / 2;
+        var drawImage = weapon.image;
+        this.drawObject(drawX,drawY,drawImage);
+        //var drawX = 800/size * xStart + (800/size - 40) / 2;
+        //var drawY = 800/size * yStart + (800/size - 40) / 2;
+        //console.log(size);
+       // var drawImage = weapon.image;
+        //this.drawObject(drawX,drawY,drawImage);
+
+        }
+
+        
     }
 }

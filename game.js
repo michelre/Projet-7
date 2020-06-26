@@ -129,7 +129,8 @@ class Game {
                     var xStart = 800/this.length * (player.coordX +r) + 1;
                     var yStart = 800/this.length * player.coordY + 1;
                     var cellSize = 800/this.length - 2;
-                    this.boardDrawing.drawRect(xStart,yStart,cellSize,"#00cc44"); 
+                    //this.boardDrawing.drawRect(xStart,yStart,cellSize,"#00cc44");
+                    this.boardDrawing.drawRect(xStart,yStart,cellSize,"rgba(0,0,0,0.3)");
                 }
                 
                 
@@ -230,7 +231,8 @@ class Game {
         var xStart = 800/this.length * this.currentPlayer.coordX +1;
         var yStart = 800/this.length * this.currentPlayer.coordY +1;
         var cellSize = 800/this.length -2;
-        this.boardDrawing.drawRect(xStart,yStart,cellSize,"#FFFFFF");
+        
+        this.boardDrawing.drawRect(xStart,yStart,cellSize,"#FFFFFF",this.weapons[1]);
         this.currentPlayer.coordX = x;
         this.currentPlayer.coordY = y;
         console.log("x =" + this.currentPlayer.coordX + ",y =" + this.currentPlayer.coordY);
@@ -311,6 +313,8 @@ class Game {
         }else{
             var delta = this.boardDrawing.currentCanva.getBoundingClientRect();
            if(this.validatePosition(this.availablePos,event.clientX - delta.left,event.clientY - delta.top)){
+
+
             this.roundturn += 1;
             this.changePlayer();
             this.round();
@@ -324,6 +328,8 @@ class Game {
         this.endGame = false;
 
             this.availablePos = this.choosePosition();
+
+
             
 
 
